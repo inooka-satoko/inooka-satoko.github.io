@@ -5,20 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>【公式】井ノ岡里子｜日本画家／庭style主宰</title>
 
+    <!-- iOSお気に入り（ホーム画面追加）時のタイトル設定 -->
     <meta name="apple-mobile-web-app-title" content="井ノ岡里子">
     <meta name="application-name" content="井ノ岡里子">
 
+    <!-- ファビコン・Apple Touch Iconの設定 -->
     <link rel="icon" href="file/icon.jpg" type="image/jpeg">
     <link rel="apple-touch-icon" href="file/icon.jpg">
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 
+    <!-- 共通スタイルシート -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- ヘッダー -->
     <header class="site-header">
         <div class="header-inner">
             <h1 class="site-title">
@@ -38,20 +43,27 @@
         </div>
     </header>
 
+    <!-- メインビジュアル（5枚のクロスフェードスライドショー） -->
     <section class="hero-section">
-        <div class="hero-image-wrapper">
-            <img src="file/1.jpg" alt="井ノ岡里子 メイン作品" class="hero-image">
+        <div class="hero-slideshow">
+            <img src="file/1.jpg" alt="メインビジュアル 1">
+            <img src="file/2.jpg" alt="メインビジュアル 2">
+            <img src="file/3.jpg" alt="メインビジュアル 3">
+            <img src="file/4.jpg" alt="メインビジュアル 4">
+            <img src="file/5.jpg" alt="メインビジュアル 5">
             <div class="hero-overlay">
                 <p class="hero-catch">伝統と自然が織りなす美の世界</p>
             </div>
         </div>
     </section>
 
+    <!-- プロフィール -->
     <section id="profile" class="section profile-section">
         <div class="container">
             <div class="profile-grid">
                 <div class="profile-thumb">
-                    <img src="file/2.jpg" alt="井ノ岡里子 プロフィール">
+                    <!-- ご要望通り file/3.jpg を使用 -->
+                    <img src="file/3.jpg" alt="井ノ岡里子 プロフィール">
                 </div>
                 <div class="profile-content">
                     <h2 class="section-title">
@@ -69,43 +81,102 @@
         </div>
     </section>
 
+    <!-- ニュース（画像なし・文字のみのリスト形式） -->
     <section id="news" class="section news-section">
         <div class="container">
             <h2 class="section-title text-center">
-                <span class="en">News & Topics</span>
-                <span class="ja">ニュース・トピックス</span>
+                <span class="en">News</span>
+                <span class="ja">ニュース</span>
+            </h2>
+            <ul class="news-list">
+                <!-- 記事1（複数のタグをつける例） -->
+                <li class="news-item">
+                    <div class="news-meta">
+                        <time datetime="2026-09-01">2026.09.01</time>
+                        <div class="tags">
+                            <span class="tag tag-notice">お知らせ</span>
+                            <span class="tag tag-inooka">井ノ岡</span>
+                        </div>
+                    </div>
+                    <h3 class="news-title"><a href="#">秋期 個展「庭と絵画の対話」開催のご案内</a></h3>
+                </li>
+
+                <!-- 記事2 -->
+                <li class="news-item">
+                    <div class="news-meta">
+                        <time datetime="2026-08-20">2026.08.20</time>
+                        <div class="tags">
+                            <span class="tag tag-both">井ノ岡＆本谷</span>
+                        </div>
+                    </div>
+                    <h3 class="news-title"><a href="#">合同アトリエ展示会の開催日程が決定しました</a></h3>
+                </li>
+
+                <!-- 記事3 -->
+                <li class="news-item">
+                    <div class="news-meta">
+                        <time datetime="2026-08-10">2026.08.10</time>
+                        <div class="tags">
+                            <span class="tag tag-event">イベント</span>
+                            <span class="tag tag-mototani">本谷</span>
+                        </div>
+                    </div>
+                    <h3 class="news-title"><a href="#">秋の庭園めぐりツアーのお知らせ</a></h3>
+                </li>
+            </ul>
+            <div class="text-center mt-4">
+                <a href="news.html" class="btn">ニュース一覧を見る</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- トピックス（画像あり・カード形式） -->
+    <section id="topics" class="section topics-section" style="background-color: #fff;">
+        <div class="container">
+            <h2 class="section-title text-center">
+                <span class="en">Topics</span>
+                <span class="ja">トピックス</span>
             </h2>
             <div class="cards-grid">
+                <!-- トピックカード 1 -->
                 <article class="card">
-                    <div class="card-image">
-                        <img src="file/3.jpg" alt="個展開催のお知らせ">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-tag">News</span>
-                        <time datetime="2026-09-01">2026.09.01</time>
-                        <h3 class="card-title"><a href="#">秋期 個展「庭と絵画の対話」開催のご案内</a></h3>
-                        <p class="card-text">新作の日本画と空間プロデュースを合わせた特別展を開催いたします。</p>
-                    </div>
-                </article>
-
-                <article class="card" id="topics">
                     <div class="card-image">
                         <img src="file/4.jpg" alt="庭styleワークショップ">
                     </div>
                     <div class="card-body">
-                        <span class="card-tag tag-topics">Topics</span>
+                        <div class="tags mb-2">
+                            <span class="tag tag-both">井ノ岡＆本谷</span>
+                            <span class="tag tag-event">イベント</span>
+                        </div>
                         <time datetime="2026-08-15">2026.08.15</time>
                         <h3 class="card-title"><a href="#">「庭style」空間コーディネートワークショップ</a></h3>
                         <p class="card-text">日常に和の美を取り入れるための空間づくりに関する連載記事を更新しました。</p>
                     </div>
                 </article>
+
+                <!-- トピックカード 2 -->
+                <article class="card">
+                    <div class="card-image">
+                        <img src="file/1.jpg" alt="メディア掲載">
+                    </div>
+                    <div class="card-body">
+                        <div class="tags mb-2">
+                            <span class="tag tag-notice">お知らせ</span>
+                            <span class="tag tag-other">その他</span>
+                        </div>
+                        <time datetime="2026-07-30">2026.07.30</time>
+                        <h3 class="card-title"><a href="#">美術誌「和の美」9月号に掲載されました</a></h3>
+                        <p class="card-text">巻頭特集にて、最近の活動や作品についてのインタビューが掲載されています。</p>
+                    </div>
+                </article>
             </div>
             <div class="text-center mt-4">
-                <a href="news.html" class="btn">一覧を見る</a>
+                <a href="topics.html" class="btn">トピックス一覧を見る</a>
             </div>
         </div>
     </section>
 
+    <!-- コンタクト -->
     <section id="contact" class="section contact-section">
         <div class="container">
             <div class="contact-box">
@@ -124,6 +195,7 @@
         </div>
     </section>
 
+    <!-- フッター -->
     <footer class="site-footer">
         <div class="container text-center">
             <p class="footer-title">【公式】井ノ岡里子｜日本画家／庭style主宰</p>
