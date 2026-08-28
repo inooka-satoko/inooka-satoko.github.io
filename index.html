@@ -4,133 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>【公式】井ノ岡里子｜日本画家／庭style主宰</title>
-    
-    <!-- ファビコン (ブラウザータブ用) -->
-    <link rel="icon" href="file/icon.jpg" type="image/jpeg">
-    
-    <!-- iOS ホーム画面・お気に入り登録用アイコン (Apple Touch Icon) -->
-    <link rel="apple-touch-icon" href="file/icon.jpg">
-    
-    <!-- Safari用ピン留めタブ・アイコン設定など -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
     <meta name="apple-mobile-web-app-title" content="井ノ岡里子">
+    <meta name="application-name" content="井ノ岡里子">
 
-    <style>
-        :root {
-            --primary-color: #1b365d;
-            --accent-color: #c5a059;
-            --bg-color: #f8f9fa;
-            --text-color: #333333;
-        }
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    <link rel="icon" href="file/icon.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="file/icon.jpg">
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 
-        header {
-            background-color: var(--primary-color);
-            color: #ffffff;
-            padding: 2rem 1rem;
-            text-align: center;
-            border-bottom: 4px solid var(--accent-color);
-        }
-
-        header h1 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
-
-        header p {
-            font-size: 0.95rem;
-            opacity: 0.9;
-        }
-
-        main {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .card {
-            background: #ffffff;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            margin-bottom: 1.5rem;
-        }
-
-        .card h2 {
-            color: var(--primary-color);
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            border-left: 4px solid var(--accent-color);
-            padding-left: 0.5rem;
-        }
-
-        .ios-tip {
-            background: #eef2f7;
-            border: 1px solid #d0dbe7;
-            padding: 1rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-        }
-
-        .ios-tip strong {
-            color: var(--primary-color);
-        }
-
-        footer {
-            text-align: center;
-            padding: 1.5rem;
-            font-size: 0.85rem;
-            color: #666;
-            border-top: 1px solid #e5e5e5;
-            margin-top: 3rem;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>翁名学園</h1>
-        <p>Ouna Gakuen Official Website</p>
+    <header class="site-header">
+        <div class="header-inner">
+            <h1 class="site-title">
+                <a href="index.html">
+                    <span class="main-name">井ノ岡里子</span>
+                    <span class="sub-title">日本画家 / 庭style主宰</span>
+                </a>
+            </h1>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="#profile"><span class="en">Profile</span><span class="ja">プロフィール</span></a></li>
+                    <li><a href="#news"><span class="en">News</span><span class="ja">ニュース</span></a></li>
+                    <li><a href="#topics"><span class="en">Topics</span><span class="ja">トピックス</span></a></li>
+                    <li><a href="#contact"><span class="en">Contact</span><span class="ja">コンタクト</span></a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="card">
-            <h2>サイトへようこそ</h2>
-            <p>このページは、<code>file/icon.jpg</code> をファビコンおよび iOS のお気に入り（ホーム画面・ブックマーク）に追加した際のアイコンとして設定したサンプルHTMLです。</p>
-            
-            <div class="ios-tip">
-                <strong>iOSでの確認方法：</strong><br>
-                iPhoneやiPadのSafariでこのページを開き、共有ボタン（四角から矢印が出ているアイコン）から「ホーム画面に追加」または「ブックマークに追加」を選択すると、指定したアイコンが綺麗に表示されます。
+    <section class="hero-section">
+        <div class="hero-image-wrapper">
+            <img src="file/1.jpg" alt="井ノ岡里子 メイン作品" class="hero-image">
+            <div class="hero-overlay">
+                <p class="hero-catch">伝統と自然が織りなす美の世界</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="card">
-            <h2>設定されているコード</h2>
-            <p><code>&lt;head&gt;</code> 内には以下のメタタグとリンクタグが記述されています。</p>
-            <pre style="background: #f1f3f5; padding: 1rem; border-radius: 4px; overflow-x: auto; margin-top: 0.8rem; font-size: 0.85rem;"><code>&lt;!-- ファビコン (ブラウザータブ用) --&gt;
-&lt;link rel="icon" href="file/icon.jpg" type="image/jpeg"&gt;
+    <section id="profile" class="section profile-section">
+        <div class="container">
+            <div class="profile-grid">
+                <div class="profile-thumb">
+                    <img src="file/2.jpg" alt="井ノ岡里子 プロフィール">
+                </div>
+                <div class="profile-content">
+                    <h2 class="section-title">
+                        <span class="en">Profile</span>
+                        <span class="ja">プロフィール</span>
+                    </h2>
+                    <h3 class="profile-name">井ノ岡 里子 <span class="profile-title-sub">Satoko Inooka</span></h3>
+                    <p class="profile-lead">日本画家 ／ 庭style主宰</p>
+                    <p class="profile-text">
+                        伝統的な日本画の技法を用いながら、自然や庭園の美しさを現代の生活空間へと昇華させる試みを続けています。「庭style」を通じて、絵画と空間が調和する豊かなライフスタイルを提案しています。
+                    </p>
+                    <a href="profile.html" class="btn">詳しく見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-&lt;!-- iOS ホーム画面・お気に入り登録用アイコン --&gt;
-&lt;link rel="apple-touch-icon" href="file/icon.jpg"&gt;</code></pre>
-        </section>
-    </main>
+    <section id="news" class="section news-section">
+        <div class="container">
+            <h2 class="section-title text-center">
+                <span class="en">News & Topics</span>
+                <span class="ja">ニュース・トピックス</span>
+            </h2>
+            <div class="cards-grid">
+                <article class="card">
+                    <div class="card-image">
+                        <img src="file/3.jpg" alt="個展開催のお知らせ">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">News</span>
+                        <time datetime="2026-09-01">2026.09.01</time>
+                        <h3 class="card-title"><a href="#">秋期 個展「庭と絵画の対話」開催のご案内</a></h3>
+                        <p class="card-text">新作の日本画と空間プロデュースを合わせた特別展を開催いたします。</p>
+                    </div>
+                </article>
 
-    <footer>
-        <p>&copy; 2026 翁名学園 All Rights Reserved.</p>
+                <article class="card" id="topics">
+                    <div class="card-image">
+                        <img src="file/4.jpg" alt="庭styleワークショップ">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag tag-topics">Topics</span>
+                        <time datetime="2026-08-15">2026.08.15</time>
+                        <h3 class="card-title"><a href="#">「庭style」空間コーディネートワークショップ</a></h3>
+                        <p class="card-text">日常に和の美を取り入れるための空間づくりに関する連載記事を更新しました。</p>
+                    </div>
+                </article>
+            </div>
+            <div class="text-center mt-4">
+                <a href="news.html" class="btn">一覧を見る</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="contact-box">
+                <div class="contact-bg-image" style="background-image: url('file/5.jpg');"></div>
+                <div class="contact-content">
+                    <h2 class="section-title light">
+                        <span class="en">Contact</span>
+                        <span class="ja">お問い合わせ</span>
+                    </h2>
+                    <p class="contact-lead">
+                        作品のご購入・貸出に関するご相談、庭styleの空間プロデュースのご依頼など、<br>お気軽にお問い合わせください。
+                    </p>
+                    <a href="contact.html" class="btn btn-light">お問い合わせはこちら</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container text-center">
+            <p class="footer-title">【公式】井ノ岡里子｜日本画家／庭style主宰</p>
+            <p class="copyright">&copy; Satoko Inooka All Rights Reserved.</p>
+        </div>
     </footer>
 
 </body>
