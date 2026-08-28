@@ -57,6 +57,7 @@ a:hover {
 .text-center { text-align: center; }
 .mt-4 { margin-top: 2.5rem; }
 .mb-2 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 2.5rem; }
 
 /* ==========================================================================
    2. ヘッダー
@@ -144,23 +145,20 @@ a:hover {
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    /* 1枚あたり5秒×5枚 ＝ 合計25秒でループさせる設定 */
     animation: fadeSlide 25s infinite;
 }
 
-/* 各画像の表示タイミングを5秒ずつずらす */
 .hero-slideshow img:nth-child(1) { animation-delay: 0s; }
 .hero-slideshow img:nth-child(2) { animation-delay: 5s; }
 .hero-slideshow img:nth-child(3) { animation-delay: 10s; }
 .hero-slideshow img:nth-child(4) { animation-delay: 15s; }
 .hero-slideshow img:nth-child(5) { animation-delay: 20s; }
 
-/* フェードイン・アウトのアニメーション */
 @keyframes fadeSlide {
     0%   { opacity: 0; }
-    8%   { opacity: 1; } /* 2秒かけてフェードイン */
-    20%  { opacity: 1; } /* 3秒間そのまま表示（合計5秒） */
-    28%  { opacity: 0; } /* 2秒かけてフェードアウト */
+    8%   { opacity: 1; }
+    20%  { opacity: 1; }
+    28%  { opacity: 0; }
     100% { opacity: 0; }
 }
 
@@ -181,6 +179,27 @@ a:hover {
     text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     padding: 0 20px;
     writing-mode: vertical-rl;
+}
+
+/* 下層ページ用ヘッダー */
+.page-header {
+    background-color: #1f1f1f;
+    color: var(--color-light);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.page-header .en {
+    font-family: var(--font-en);
+    font-size: 2.5rem;
+    letter-spacing: 0.1em;
+    display: block;
+}
+
+.page-header .ja {
+    font-size: 0.9rem;
+    color: #aaa;
+    letter-spacing: 0.1em;
 }
 
 /* ==========================================================================
@@ -218,6 +237,7 @@ a:hover {
     font-size: 0.9rem;
     letter-spacing: 0.1em;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -276,7 +296,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   6. タグデザイン（複数設置対応・ご指定カラー）
+   6. タグデザイン（カラー設定）
    ========================================================================== */
 .tags {
     display: flex;
@@ -293,65 +313,20 @@ a:hover {
     letter-spacing: 0.05em;
 }
 
-/* 個別のタグ色設定（和風で落ち着いた色合い） */
-.tag-notice   { background-color: #4a6984; } /* お知らせ：渋い青 */
-.tag-event    { background-color: #b75c5c; } /* イベント：落ち着いた赤・朱色 */
-.tag-inooka   { background-color: #5b7065; } /* 井ノ岡：抹茶色 */
-.tag-mototani { background-color: #b29a4a; } /* 本谷：芥子色（からしいろ） */
+.tag-notice   { background-color: #4a6984; } /* お知らせ：青 */
+.tag-event    { background-color: #b75c5c; } /* イベント：赤 */
+.tag-inooka   { background-color: #7058a3; } /* 井ノ岡：紫（江戸紫） */
+.tag-mototani { background-color: #b29a4a; } /* 本谷：芥子色 */
 .tag-other    { background-color: #888888; } /* その他：グレー */
 
-/* 井ノ岡＆本谷：抹茶色から芥子色へのグラデーション */
+/* 井ノ岡＆本谷：紫から芥子色へのグラデーション */
 .tag-both {
-    background: linear-gradient(135deg, #5b7065 0%, #b29a4a 100%);
+    background: linear-gradient(135deg, #7058a3 0%, #b29a4a 100%);
     color: #fff;
 }
 
 /* ==========================================================================
-   7. ニュース（文字のみリスト形式）
-   ========================================================================== */
-.news-list {
-    list-style: none;
-    border-top: 1px solid var(--color-border);
-}
-
-.news-item {
-    display: flex;
-    align-items: center;
-    padding: 20px 10px;
-    border-bottom: 1px solid var(--color-border);
-    transition: background-color 0.3s ease;
-}
-
-.news-item:hover {
-    background-color: rgba(0, 0, 0, 0.02);
-}
-
-.news-meta {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    width: 250px; /* 日付とタグのエリア幅 */
-    flex-shrink: 0;
-}
-
-.news-meta time {
-    font-size: 0.9rem;
-    color: #666;
-    font-family: var(--font-en);
-}
-
-.news-title {
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 1.5;
-}
-
-.news-title a {
-    display: block;
-}
-
-/* ==========================================================================
-   8. トピックス（画像ありカード形式）
+   7. ニュース（画像ありカード形式）
    ========================================================================== */
 .cards-grid {
     display: grid;
@@ -390,6 +365,7 @@ a:hover {
     font-size: 0.8rem;
     color: #888;
     margin-bottom: 5px;
+    font-family: var(--font-en);
 }
 
 .card-title {
@@ -404,7 +380,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   9. コンタクト
+   8. コンタクト & お問い合わせフォーム
    ========================================================================== */
 .contact-box {
     position: relative;
@@ -434,8 +410,44 @@ a:hover {
     font-size: 0.95rem;
 }
 
+/* フォームのスタイル */
+.form-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--color-light);
+    padding: 50px;
+    border: 1px solid var(--color-border);
+}
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    height: 200px;
+    resize: vertical;
+}
+
 /* ==========================================================================
-   10. フッター
+   9. フッター
    ========================================================================== */
 .site-footer {
     background-color: #1f1f1f;
@@ -450,37 +462,26 @@ a:hover {
 }
 
 /* ==========================================================================
-   11. レスポンシブ対応（スマホ向け）
+   10. レスポンシブ対応（スマホ向け）
    ========================================================================== */
 @media (max-width: 768px) {
     .header-inner {
         flex-direction: column;
         gap: 15px;
     }
-
     .site-nav ul {
         gap: 15px;
         flex-wrap: wrap;
         justify-content: center;
     }
-
     .hero-catch {
         font-size: 1.3rem;
     }
-
     .profile-grid {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-
-    /* スマホ版ではニュースの日付とタイトルを縦並びに */
-    .news-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .news-meta {
-        width: 100%;
+    .form-wrapper {
+        padding: 30px 20px;
     }
 }
