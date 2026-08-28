@@ -1,0 +1,395 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   1. 基本設定（変数の定義・リセット）
+   ========================================================================== */
+:root {
+    --color-bg: #faf9f6;          /* 上品な生成り色 */
+    --color-text: #2b2b2b;        /* 墨色 */
+    --color-accent: #8c7051;      /* 落ち着いたゴールド・落ち着いた木調色 */
+    --color-light: #ffffff;
+    --color-border: #e0dad3;
+    --font-serif: 'Shippori Mincho', 'Yu Mincho', "游明朝", serif;
+    --font-en: 'Cinzel', serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-serif);
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* 共通コンテナ */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-4 {
+    margin-top: 2.5rem;
+}
+
+/* ==========================================================================
+   2. ヘッダー
+   ========================================================================== */
+.site-header {
+    position: sticky;
+    top: 0;
+    background-color: rgba(250, 249, 246, 0.95);
+    backdrop-filter: blur(5px);
+    z-index: 100;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title .main-name {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+.site-title .sub-title {
+    display: block;
+    font-size: 0.75rem;
+    color: #666;
+    font-weight: normal;
+}
+
+.site-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.site-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.site-nav .en {
+    font-family: var(--font-en);
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.site-nav .ja {
+    font-size: 0.65rem;
+    color: #777;
+    margin-top: -2px;
+}
+
+/* ==========================================================================
+   3. メインビジュアル（ヒーロー）
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    width: 100%;
+    max-height: 80vh;
+    overflow: hidden;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-catch {
+    color: var(--color-light);
+    font-size: 1.8rem;
+    letter-spacing: 0.2em;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    padding: 0 20px;
+    writing-mode: vertical-rl; /* 和風の縦書き演出 */
+}
+
+/* ==========================================================================
+   4. 各セクション共通パーツ & ボタン
+   ========================================================================== */
+.section {
+    padding: 90px 0;
+}
+
+.section-title {
+    margin-bottom: 40px;
+}
+
+.section-title .en {
+    display: block;
+    font-family: var(--font-en);
+    font-size: 2rem;
+    color: var(--color-accent);
+    letter-spacing: 0.1em;
+}
+
+.section-title .ja {
+    display: block;
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 2px;
+}
+
+.section-title.light .en,
+.section-title.light .ja {
+    color: var(--color-light);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 40px;
+    border: 1px solid var(--color-text);
+    color: var(--color-text);
+    background: transparent;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--color-text);
+    color: var(--color-light);
+    opacity: 1;
+}
+
+.btn-light {
+    border-color: var(--color-light);
+    color: var(--color-light);
+}
+
+.btn-light:hover {
+    background-color: var(--color-light);
+    color: var(--color-text);
+}
+
+/* ==========================================================================
+   5. プロフィールセクション
+   ========================================================================== */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.profile-thumb img {
+    border-radius: 2px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.profile-title-sub {
+    font-family: var(--font-en);
+    font-size: 0.9rem;
+    color: #777;
+    margin-left: 10px;
+}
+
+.profile-lead {
+    color: var(--color-accent);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.profile-text {
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* ==========================================================================
+   6. ニュース & トピックス
+   ========================================================================== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--color-light);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+}
+
+.card-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-tag {
+    display: inline-block;
+    padding: 2px 10px;
+    background-color: var(--color-accent);
+    color: var(--color-light);
+    font-size: 0.7rem;
+    font-family: var(--font-en);
+    margin-right: 10px;
+}
+
+.card-tag.tag-topics {
+    background-color: #5b7065; /* トピックス用の少し落ちついたグリーン */
+}
+
+time {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    margin: 12px 0 10px;
+    line-height: 1.5;
+}
+
+.card-text {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* ==========================================================================
+   7. コンタクトセクション
+   ========================================================================== */
+.contact-box {
+    position: relative;
+    padding: 80px 40px;
+    text-align: center;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.contact-bg-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4);
+    z-index: 1;
+}
+
+.contact-content {
+    position: relative;
+    z-index: 2;
+    color: var(--color-light);
+}
+
+.contact-lead {
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   8. フッター
+   ========================================================================== */
+.site-footer {
+    background-color: #1f1f1f;
+    color: #888;
+    padding: 40px 0;
+    font-size: 0.8rem;
+}
+
+.footer-title {
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   9. レスポンシブ対応（スマホ向け調整）
+   ========================================================================== */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .site-nav ul {
+        gap: 15px;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hero-catch {
+        font-size: 1.3rem;
+    }
+}
