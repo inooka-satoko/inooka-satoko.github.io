@@ -26,34 +26,35 @@
             </h1>
             <nav class="site-nav">
                 <ul>
-                    <li><a href="profile.html"><span class="en">Profile</span><span class="ja">プロフィール</span></a></li>
-                    <li><a href="news.html"><span class="en">News</span><span class="ja">ニュース</span></a></li>
-                    <li><a href="contact.html"><span class="en">Contact</span><span class="ja">コンタクト</span></a></li>
+                    <!-- 各下層ページの index.html へリンク -->
+                    <li><a href="profile/index.html"><span class="en">Profile</span><span class="ja">プロフィール</span></a></li>
+                    <li><a href="news/index.html"><span class="en">News</span><span class="ja">ニュース</span></a></li>
+                    <li><a href="contact/index.html"><span class="en">Contact</span><span class="ja">コンタクト</span></a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- メインビジュアル -->
+    <!-- 5枚クロスフェードメインビジュアル -->
     <section class="hero-section">
         <div class="hero-slideshow">
-            <img src="file/1.jpg" alt="メインビジュアル 1">
-            <img src="file/2.jpg" alt="メインビジュアル 2">
-            <img src="file/3.jpg" alt="メインビジュアル 3">
-            <img src="file/4.jpg" alt="メインビジュアル 4">
-            <img src="file/5.jpg" alt="メインビジュアル 5">
+            <img src="file/1.jpg" alt="作品1">
+            <img src="file/2.jpg" alt="作品2">
+            <img src="file/3.jpg" alt="作品3">
+            <img src="file/4.jpg" alt="作品4">
+            <img src="file/5.jpg" alt="作品5">
             <div class="hero-overlay">
                 <p class="hero-catch">伝統と自然が織りなす美の世界</p>
             </div>
         </div>
     </section>
 
-    <!-- プロフィール -->
+    <!-- プロフィール概要 -->
     <section class="section profile-section">
         <div class="container">
             <div class="profile-grid">
                 <div class="profile-thumb">
-                    <img src="file/3.jpg" alt="井ノ岡里子 プロフィール">
+                    <img src="file/3.jpg" alt="井ノ岡里子">
                 </div>
                 <div class="profile-content">
                     <h2 class="section-title">
@@ -65,13 +66,13 @@
                     <p class="profile-text">
                         伝統的な日本画の技法を用いながら、自然や庭園の美しさを現代の生活空間へと昇華させる試みを続けています。「庭style」を通じて、絵画と空間が調和する豊かなライフスタイルを提案しています。
                     </p>
-                    <a href="profile.html" class="btn">詳しく見る</a>
+                    <a href="profile/index.html" class="btn">詳しく見る</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ニュース（画像ありカード形式） -->
+    <!-- ニュース（画像ありのカード形式） -->
     <section class="section news-section" style="background-color: #fff;">
         <div class="container">
             <h2 class="section-title text-center">
@@ -83,7 +84,7 @@
                 <!-- 記事1：ホームページ開設 -->
                 <article class="card">
                     <div class="card-image">
-                        <img src="file/5.jpg" alt="ホームページ開設">
+                        <img src="file/4.jpg" alt="ホームページ開設">
                     </div>
                     <div class="card-body">
                         <div class="tags mb-2">
@@ -91,13 +92,14 @@
                         </div>
                         <time datetime="2025-10-31">2025.10.31</time>
                         <h3 class="card-title"><a href="#">ホームページを開設しました</a></h3>
+                        <p class="card-text">井ノ岡里子の公式ホームページを新たに公開いたしました。今後の活動や作品情報を発信してまいります。</p>
                     </div>
                 </article>
 
                 <!-- 記事2：神戸文化祭 -->
                 <article class="card">
                     <div class="card-image">
-                        <img src="file/4.jpg" alt="神戸文化祭">
+                        <img src="file/2.jpg" alt="神戸文化祭">
                     </div>
                     <div class="card-body">
                         <div class="tags mb-2">
@@ -106,13 +108,14 @@
                         </div>
                         <time datetime="2025-10-31">2025.10.31</time>
                         <h3 class="card-title"><a href="#">神戸文化祭のお知らせ</a></h3>
+                        <p class="card-text">地元神戸で開催される文化祭にて、本谷との合同企画展示を行います。皆様のお越しをお待ちしております。</p>
                     </div>
                 </article>
 
-                <!-- 記事3：個展 -->
+                <!-- 記事3：個展のお知らせ -->
                 <article class="card">
                     <div class="card-image">
-                        <img src="file/1.jpg" alt="個展">
+                        <img src="file/1.jpg" alt="個展のお知らせ">
                     </div>
                     <div class="card-body">
                         <div class="tags mb-2">
@@ -121,30 +124,29 @@
                         </div>
                         <time datetime="2025-10-31">2025.10.31</time>
                         <h3 class="card-title"><a href="#">個展のお知らせ</a></h3>
+                        <p class="card-text">新作の日本画を中心とした個展を開催いたします。庭と絵画が交差する空間をぜひご体感ください。</p>
                     </div>
                 </article>
 
             </div>
             <div class="text-center mt-4">
-                <a href="news.html" class="btn">ニュース一覧を見る</a>
+                <a href="news/index.html" class="btn">ニュース一覧を見る</a>
             </div>
         </div>
     </section>
 
-    <!-- コンタクト -->
+    <!-- コンタクト概要 -->
     <section class="section contact-section">
         <div class="container">
             <div class="contact-box">
-                <div class="contact-bg-image" style="background-image: url('file/2.jpg');"></div>
+                <div class="contact-bg-image" style="background-image: url('file/5.jpg');"></div>
                 <div class="contact-content">
                     <h2 class="section-title light">
                         <span class="en">Contact</span>
                         <span class="ja">お問い合わせ</span>
                     </h2>
-                    <p class="contact-lead">
-                        作品のご購入・貸出に関するご相談など、お気軽にお問い合わせください。
-                    </p>
-                    <a href="contact.html" class="btn btn-light">お問い合わせはこちら</a>
+                    <p class="contact-lead">作品のご購入に関するご相談やご依頼など、<br>お気軽にお問い合わせください。</p>
+                    <a href="contact/index.html" class="btn btn-light">お問い合わせはこちら</a>
                 </div>
             </div>
         </div>
@@ -154,6 +156,10 @@
     <footer class="site-footer">
         <div class="container text-center">
             <p class="footer-title">【公式】井ノ岡里子｜日本画家／庭style主宰</p>
+            <ul class="footer-links">
+                <!-- プライバシーポリシーへのリンク（ダミーとして # を指定） -->
+                <li><a href="#">プライバシーポリシー</a></li>
+            </ul>
             <p class="copyright">&copy; Satoko Inooka All Rights Reserved.</p>
         </div>
     </footer>
