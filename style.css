@@ -4,9 +4,9 @@
    1. 基本設定（変数の定義・リセット）
    ========================================================================== */
 :root {
-    --color-bg: #faf9f6;          /* 上品な生成り色 */
-    --color-text: #2b2b2b;        /* 墨色 */
-    --color-accent: #8c7051;      /* 落ち着いたゴールド・落ち着いた木調色 */
+    --color-bg: #faf9f6;          
+    --color-text: #2b2b2b;        
+    --color-accent: #8c7051;      
     --color-light: #ffffff;
     --color-border: #e0dad3;
     --font-serif: 'Shippori Mincho', 'Yu Mincho', "游明朝", serif;
@@ -48,20 +48,15 @@ a:hover {
     opacity: 0.7;
 }
 
-/* 共通コンテナ */
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.text-center {
-    text-align: center;
-}
-
-.mt-4 {
-    margin-top: 2.5rem;
-}
+.text-center { text-align: center; }
+.mt-4 { margin-top: 2.5rem; }
+.mb-2 { margin-bottom: 1rem; }
 
 /* ==========================================================================
    2. ヘッダー
@@ -124,25 +119,49 @@ a:hover {
 }
 
 /* ==========================================================================
-   3. メインビジュアル（ヒーロー）
+   3. メインビジュアル（5枚クロスフェード）
    ========================================================================== */
 .hero-section {
     position: relative;
     width: 100%;
+    height: 70vh;
     max-height: 80vh;
     overflow: hidden;
 }
 
-.hero-image-wrapper {
-    position: relative;
+.hero-slideshow {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: 70vh;
+    height: 100%;
 }
 
-.hero-image {
+.hero-slideshow img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0;
+    /* 1枚あたり5秒×5枚 ＝ 合計25秒でループさせる設定 */
+    animation: fadeSlide 25s infinite;
+}
+
+/* 各画像の表示タイミングを5秒ずつずらす */
+.hero-slideshow img:nth-child(1) { animation-delay: 0s; }
+.hero-slideshow img:nth-child(2) { animation-delay: 5s; }
+.hero-slideshow img:nth-child(3) { animation-delay: 10s; }
+.hero-slideshow img:nth-child(4) { animation-delay: 15s; }
+.hero-slideshow img:nth-child(5) { animation-delay: 20s; }
+
+/* フェードイン・アウトのアニメーション */
+@keyframes fadeSlide {
+    0%   { opacity: 0; }
+    8%   { opacity: 1; } /* 2秒かけてフェードイン */
+    20%  { opacity: 1; } /* 3秒間そのまま表示（合計5秒） */
+    28%  { opacity: 0; } /* 2秒かけてフェードアウト */
+    100% { opacity: 0; }
 }
 
 .hero-overlay {
@@ -152,6 +171,7 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 10;
 }
 
 .hero-catch {
@@ -160,19 +180,14 @@ a:hover {
     letter-spacing: 0.2em;
     text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     padding: 0 20px;
-    writing-mode: vertical-rl; /* 和風の縦書き演出 */
+    writing-mode: vertical-rl;
 }
 
 /* ==========================================================================
    4. 各セクション共通パーツ & ボタン
    ========================================================================== */
-.section {
-    padding: 90px 0;
-}
-
-.section-title {
-    margin-bottom: 40px;
-}
+.section { padding: 90px 0; }
+.section-title { margin-bottom: 40px; }
 
 .section-title .en {
     display: block;
@@ -222,7 +237,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   5. プロフィールセクション
+   5. プロフィール
    ========================================================================== */
 .profile-grid {
     display: grid;
@@ -261,7 +276,82 @@ a:hover {
 }
 
 /* ==========================================================================
-   6. ニュース & トピックス
+   6. タグデザイン（複数設置対応・ご指定カラー）
+   ========================================================================== */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tag {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+/* 個別のタグ色設定（和風で落ち着いた色合い） */
+.tag-notice   { background-color: #4a6984; } /* お知らせ：渋い青 */
+.tag-event    { background-color: #b75c5c; } /* イベント：落ち着いた赤・朱色 */
+.tag-inooka   { background-color: #5b7065; } /* 井ノ岡：抹茶色 */
+.tag-mototani { background-color: #b29a4a; } /* 本谷：芥子色（からしいろ） */
+.tag-other    { background-color: #888888; } /* その他：グレー */
+
+/* 井ノ岡＆本谷：抹茶色から芥子色へのグラデーション */
+.tag-both {
+    background: linear-gradient(135deg, #5b7065 0%, #b29a4a 100%);
+    color: #fff;
+}
+
+/* ==========================================================================
+   7. ニュース（文字のみリスト形式）
+   ========================================================================== */
+.news-list {
+    list-style: none;
+    border-top: 1px solid var(--color-border);
+}
+
+.news-item {
+    display: flex;
+    align-items: center;
+    padding: 20px 10px;
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color 0.3s ease;
+}
+
+.news-item:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.news-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 250px; /* 日付とタグのエリア幅 */
+    flex-shrink: 0;
+}
+
+.news-meta time {
+    font-size: 0.9rem;
+    color: #666;
+    font-family: var(--font-en);
+}
+
+.news-title {
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+.news-title a {
+    display: block;
+}
+
+/* ==========================================================================
+   8. トピックス（画像ありカード形式）
    ========================================================================== */
 .cards-grid {
     display: grid;
@@ -270,7 +360,7 @@ a:hover {
 }
 
 .card {
-    background: var(--color-light);
+    background: var(--color-bg);
     border: 1px solid var(--color-border);
     overflow: hidden;
 }
@@ -295,28 +385,16 @@ a:hover {
     padding: 25px;
 }
 
-.card-tag {
-    display: inline-block;
-    padding: 2px 10px;
-    background-color: var(--color-accent);
-    color: var(--color-light);
-    font-size: 0.7rem;
-    font-family: var(--font-en);
-    margin-right: 10px;
-}
-
-.card-tag.tag-topics {
-    background-color: #5b7065; /* トピックス用の少し落ちついたグリーン */
-}
-
-time {
+.card-body time {
+    display: block;
     font-size: 0.8rem;
     color: #888;
+    margin-bottom: 5px;
 }
 
 .card-title {
     font-size: 1.1rem;
-    margin: 12px 0 10px;
+    margin: 0 0 10px;
     line-height: 1.5;
 }
 
@@ -326,7 +404,7 @@ time {
 }
 
 /* ==========================================================================
-   7. コンタクトセクション
+   9. コンタクト
    ========================================================================== */
 .contact-box {
     position: relative;
@@ -357,7 +435,7 @@ time {
 }
 
 /* ==========================================================================
-   8. フッター
+   10. フッター
    ========================================================================== */
 .site-footer {
     background-color: #1f1f1f;
@@ -372,7 +450,7 @@ time {
 }
 
 /* ==========================================================================
-   9. レスポンシブ対応（スマホ向け調整）
+   11. レスポンシブ対応（スマホ向け）
    ========================================================================== */
 @media (max-width: 768px) {
     .header-inner {
@@ -382,6 +460,12 @@ time {
 
     .site-nav ul {
         gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-catch {
+        font-size: 1.3rem;
     }
 
     .profile-grid {
@@ -389,7 +473,14 @@ time {
         gap: 30px;
     }
 
-    .hero-catch {
-        font-size: 1.3rem;
+    /* スマホ版ではニュースの日付とタイトルを縦並びに */
+    .news-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .news-meta {
+        width: 100%;
     }
 }
